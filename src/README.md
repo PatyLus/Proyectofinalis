@@ -1,7 +1,8 @@
 
   # Casa Descansa
 
-  This is a code bundle for Casa Descansa. The original project is available at https://www.figma.com/design/a8LzZoeJ3pfFuuQ5PX2vZC/Casa-Descansa.
+  This is a code bundle for Casa Descansa. The original project is available at 
+  https://chase-hall-73928566.figma.site
 
   ## Running the code
 
