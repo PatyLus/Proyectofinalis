@@ -1,0 +1,138 @@
+# Sistema de Gestión de Casa Hogar
+
+## 🏥 Descripción
+Sistema web completo para gestionar una casa hogar con tres tipos de usuarios:
+- **Administrador**: Gestiona residentes, cuidadores, responsables, recetas, horarios y emergencias
+- **Cuidadores**: Visualizan información de sus pacientes asignados, recetas médicas y horarios
+- **Responsables**: Monitorean el estado de su familiar asignado y emergencias
+
+## 🚀 Cómo Usar el Sistema
+
+### 1. Crear Usuarios
+Al abrir la aplicación por primera vez, verás la pantalla de login. Haz clic en "¿Necesitas crear un usuario? Haz clic aquí" para acceder al formulario de registro.
+
+#### Crear un Administrador:
+1. Nombre: `Admin Principal`
+2. Email: `admin@casahogar.com`
+3. Contraseña: `admin123`
+4. Rol: `Administrador`
+
+#### Crear un Cuidador:
+1. Nombre: `María González`
+2. Email: `maria@casahogar.com`
+3. Contraseña: `cuidador123`
+4. Rol: `Cuidador`
+5. **Importante**: Guarda el ID de usuario que aparece después de crear la cuenta (lo necesitarás para asignaciones)
+
+#### Crear un Responsable:
+1. Nombre: `Juan Pérez`
+2. Email: `juan@ejemplo.com`
+3. Contraseña: `responsable123`
+4. Rol: `Responsable`
+5. **Importante**: Guarda el ID de usuario que aparece después de crear la cuenta
+
+### 2. Flujo de Trabajo Recomendado
+
+#### Como Administrador:
+1. **Registrar Residentes**:
+   - Ve a la pestaña "Residentes"
+   - Haz clic en "Agregar Residente"
+   - Llena los datos: nombre, edad, condiciones médicas, contacto de emergencia
+   - Guarda el residente
+
+2. **Asignar Cuidadores**:
+   - Ve a la pestaña "Cuidadores"
+   - Haz clic en "Asignar Cuidador"
+   - Ingresa el ID del usuario cuidador (copiado al crear la cuenta)
+   - Selecciona los residentes que atenderá
+   - Guarda la asignación
+
+3. **Asignar Responsables**:
+   - Ve a la pestaña "Responsables"
+   - Haz clic en "Asignar Responsable"
+   - Ingresa el ID del usuario responsable
+   - Selecciona el residente que es su familiar
+   - Guarda la asignación
+
+4. **Agregar Recetas Médicas**:
+   - Ve a la pestaña "Recetas"
+   - Haz clic en "Nueva Receta"
+   - Selecciona el residente
+   - Llena: medicamento, dosis, frecuencia, horario
+   - Guarda la receta
+
+5. **Crear Horarios de Cuidadores**:
+   - Ve a la pestaña "Horarios"
+   - Haz clic en "Agregar Horario"
+   - Selecciona el cuidador
+   - Elige día de la semana y horario
+   - Guarda el horario
+
+6. **Registrar Emergencias**:
+   - Ve a la pestaña "Emergencias"
+   - Haz clic en "Registrar Emergencia"
+   - Selecciona el residente, gravedad y describe la emergencia
+   - Guarda el registro
+
+#### Como Cuidador:
+1. Inicia sesión con tu cuenta de cuidador
+2. Verás automáticamente:
+   - **Pacientes Asignados**: Lista de residentes bajo tu cuidado con contactos de emergencia
+   - **Recetas Médicas**: Todos los medicamentos con dosis, frecuencia y horarios
+   - **Mi Horario**: Tus turnos de trabajo semanales
+
+#### Como Responsable:
+1. Inicia sesión con tu cuenta de responsable
+2. Verás automáticamente:
+   - **Estado del Residente**: Estado actual de tu familiar (estable, requiere atención, emergencia)
+   - **Recetas Médicas**: Medicamentos actuales
+   - **Historial de Emergencias**: Últimas emergencias registradas
+
+## 📋 Características Principales
+
+### Panel de Administrador:
+✅ Alta de residentes con información médica completa
+✅ Asignación de cuidadores a múltiples residentes
+✅ Asignación de responsables (un familiar por residente)
+✅ Gestión de recetas médicas con horarios específicos
+✅ Creación de horarios semanales para cuidadores
+✅ Registro y seguimiento de emergencias
+✅ Estadísticas en tiempo real
+✅ Cambio de estado de residentes (estable/atención/emergencia)
+
+### Panel de Cuidador:
+✅ Visualización de pacientes asignados
+✅ Acceso a recetas médicas con dosis y horarios
+✅ Contactos de emergencia de cada paciente
+✅ Visualización de horario semanal de trabajo
+✅ Estados actuales de los pacientes
+
+### Panel de Responsable:
+✅ Estado actual del familiar
+✅ Alertas de atención médica necesaria
+✅ Recetas médicas activas
+✅ Historial de emergencias
+✅ Información de contacto de emergencia
+
+## 🔐 Seguridad
+- Sistema de autenticación con Supabase
+- Roles específicos con permisos diferenciados
+- Sesiones persistentes
+- Datos protegidos por usuario
+
+## 💡 Notas Importantes
+1. **IDs de Usuario**: Al crear usuarios de tipo cuidador o responsable, guarda su ID para poder asignarlos después
+2. **Orden de Creación**: 
+   - Primero crea usuarios
+   - Luego crea residentes
+   - Después asigna cuidadores y responsables
+   - Finalmente agrega recetas y horarios
+3. **Emergencias**: Se registran con fecha automática y se pueden ver en el dashboard del admin y del responsable
+4. **Estados de Residentes**: El admin puede cambiar el estado de un residente en cualquier momento
+
+## 🎯 Casos de Uso
+1. **Monitoreo de Salud**: El admin actualiza el estado de un residente, el responsable recibe la actualización en su panel
+2. **Administración de Medicamentos**: Los cuidadores ven exactamente qué medicamento dar, a qué hora y en qué dosis
+3. **Gestión de Turnos**: El admin crea horarios y los cuidadores los consultan en su panel
+4. **Registro de Emergencias**: Cuando ocurre una emergencia, se registra y tanto el admin como el responsable pueden verla
+5. **Contacto Rápido**: Los cuidadores tienen acceso inmediato a los números de emergencia de cada paciente
